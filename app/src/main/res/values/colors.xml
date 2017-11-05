@@ -5,4 +5,5 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorSweetError">#9e9e9e</color>
+    <color name="white">#ffffff</color>
 </resources>

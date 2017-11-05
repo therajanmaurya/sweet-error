@@ -1,4 +1,4 @@
-package therajanmaurya.opensource.sweeterror;
+package therajanmaurya.opensource.sweeterror.sweeterror;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import therajanmaurya.opensource.sweeterror.R;
 
 /**
  * @author Rajan Maurya

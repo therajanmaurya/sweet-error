@@ -15,6 +15,13 @@
     <string name="empty_ui">Empty UI</string>
     <string name="custom_error_ui">Custom Error UI</string>
 
+    <string name="sweets">Sweets</string>
+    <string name="sweet">Sweet</string>
+
+    <!--Custom Error Message-->
+    <string name="no_sweets_found">No Sweets found to taste</string>
+    <string name="come_later_again">please come later again …</string>
+
     <!--Error Message-->
     <string name="error_sorry_not_able_to_load">Sorry we weren\'t able to load</string>
 </resources>

@@ -1,10 +1,13 @@
-package therajanmaurya.opensource.sweeterror;
+package therajanmaurya.opensource.sweeterror.base;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
+
+import therajanmaurya.opensource.sweeterror.sweeterror.SweetErrorType;
+import therajanmaurya.opensource.sweeterror.sweeterror.SweetUIErrorHandler;
 
 /**
  * @author Rajan Maurya
@@ -18,18 +21,18 @@ public class SweetBaseFragment extends Fragment {
         sweetUIErrorHandler = new SweetUIErrorHandler(context, view);
     }
 
-    public void showJusticeEmptyUI(@NonNull String featureName, @Nullable String subFeatureName,
+    public void showSweetEmptyUI(@NonNull String featureName, @Nullable String subFeatureName,
             @NonNull Integer featureImage) {
         sweetUIErrorHandler.showSweetErrorUI(SweetErrorType.EMPTY_UI, featureName,
                 subFeatureName, featureImage);
     }
 
-    public void showJusticeErrorUI(@NonNull String featureName) {
+    public void showSweetErrorUI(@NonNull String featureName) {
         sweetUIErrorHandler.showSweetErrorUI(SweetErrorType.ERROR_UI, featureName, null,
                 null);
     }
 
-    public void showJusticeNoInternetUI() {
+    public void showSweetNoInternetUI() {
         sweetUIErrorHandler.showSweetErrorUI(SweetErrorType.NO_INTERNET, null, null,
                 null);
     }

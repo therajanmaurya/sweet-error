@@ -1,4 +1,4 @@
-package therajanmaurya.opensource.sweeterror;
+package therajanmaurya.opensource.sweeterror.sweeterror;
 
 /**
  * @author Rajan Maurya
