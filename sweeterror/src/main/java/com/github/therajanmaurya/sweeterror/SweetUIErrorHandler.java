@@ -46,27 +46,30 @@ public class SweetUIErrorHandler {
 
         switch (sweetErrorType) {
             case EMPTY_UI:
+                llErrorToLoad.setVisibility(View.GONE);
+                llCustomUI.setVisibility(View.GONE);
                 llEmptyUI.setVisibility(View.VISIBLE);
                 ivEmptyFeatureImage.setImageResource(featureImage);
                 tvFeatureName.setText(context.getString(R.string.empty_ui_message, featureName));
                 tvSubFeatureName.setText(
                         context.getString(R.string.empty_ui_sub_message, subFeatureName));
-                llErrorToLoad.setVisibility(View.GONE);
                 break;
             case ERROR_UI:
                 llEmptyUI.setVisibility(View.GONE);
+                llCustomUI.setVisibility(View.GONE);
                 llNoInternet.setVisibility(View.GONE);
-                llError.setVisibility(View.VISIBLE);
                 llErrorToLoad.setVisibility(View.VISIBLE);
+                llError.setVisibility(View.VISIBLE);
                 btnTryAgain.setText(context.getString(R.string.try_again));
                 tvErrorFeatureName.setText(featureName);
                 ivErrorNoInternet.setImageResource(R.drawable.ic_cloud_off_black_24dp);
                 break;
             case NO_INTERNET:
                 llEmptyUI.setVisibility(View.GONE);
+                llCustomUI.setVisibility(View.GONE);
                 llError.setVisibility(View.GONE);
-                llNoInternet.setVisibility(View.VISIBLE);
                 llErrorToLoad.setVisibility(View.VISIBLE);
+                llNoInternet.setVisibility(View.VISIBLE);
                 btnTryAgain.setText(context.getString(R.string.retry));
                 ivErrorNoInternet.setImageResource(R.drawable.ic_portable_wifi_off_black_24dp);
                 break;
