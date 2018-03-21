@@ -3,12 +3,11 @@ package com.github.therajanmaurya.sweeterror.demo;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import com.github.therajanmaurya.sweeterror.SweetErrorType;
-import com.github.therajanmaurya.sweeterror.demo.base.SweetBaseActivity;
-import com.github.therajanmaurya.sweeterror.demo.utils.ConstantKeys;
+import com.github.therajanmaurya.sweeterror.SweetUIErrorHandler;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -19,7 +18,7 @@ import butterknife.OnClick;
  * @author Rajan Maurya
  *         On 05/11/17.
  */
-public class SweetErrorInActivity extends SweetBaseActivity {
+public class SweetErrorInActivity extends AppCompatActivity {
 
     @BindView(R.id.ll_sweet)
     LinearLayout llSweet;
@@ -27,34 +26,37 @@ public class SweetErrorInActivity extends SweetBaseActivity {
     @BindView(R.id.layout_error)
     View layoutError;
 
+    private SweetUIErrorHandler sweetUIErrorHandler;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sweet_error);
         ButterKnife.bind(this);
-        initializeSweetUIErrorHandler(this, findViewById(android.R.id.content));
+
+        sweetUIErrorHandler = new SweetUIErrorHandler(this, findViewById(android.R.id.content));
 
         SweetErrorType sweetErrorType = (SweetErrorType) getIntent()
                 .getSerializableExtra(ConstantKeys.SWEET_ERROR_TYPE);
 
-        llSweet.setVisibility(View.GONE);
-        layoutError.setVisibility(View.VISIBLE);
-
         switch (sweetErrorType) {
             case EMPTY_UI:
-                showSweetEmptyUI(getString(R.string.sweets), getString(R.string.sweet),
-                        R.drawable.ic_adb_black_24dp);
+                sweetUIErrorHandler.showSweetEmptyUI(getString(R.string.sweets),
+                        getString(R.string.sweet), R.drawable.ic_adb_black_24dp,
+                        llSweet, layoutError);
                 break;
             case ERROR_UI:
-                showSweetErrorUI(getString(R.string.sweets));
+                sweetUIErrorHandler.showSweetErrorUI(getString(R.string.sweets), llSweet,
+                        layoutError);
                 break;
             case NO_INTERNET:
-                showSweetNoInternetUI();
+                sweetUIErrorHandler.showSweetNoInternetUI(llSweet, layoutError);
                 break;
             case CUSTOM:
                 findViewById(R.id.fab_add_sweet).setVisibility(View.GONE);
-                showCustomErrorUI(getString(R.string.no_sweets_found),
-                        getString(R.string.come_later_again), R.drawable.ic_adb_black_24dp);
+                sweetUIErrorHandler.showSweetCustomErrorUI(getString(R.string.no_sweets_found),
+                        getString(R.string.come_later_again), R.drawable.ic_adb_black_24dp,
+                        llSweet, layoutError);
                 break;
         }
     }

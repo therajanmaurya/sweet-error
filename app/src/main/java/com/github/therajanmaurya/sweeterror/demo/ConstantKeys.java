@@ -1,4 +1,4 @@
-package com.github.therajanmaurya.sweeterror.demo.utils;
+package com.github.therajanmaurya.sweeterror.demo;
 
 /**
  * @author Rajan Maurya

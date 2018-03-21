@@ -4,9 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.github.therajanmaurya.sweeterror.SweetErrorType;
-import com.github.therajanmaurya.sweeterror.demo.utils.ConstantKeys;
-
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
