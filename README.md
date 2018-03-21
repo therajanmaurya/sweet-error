@@ -147,7 +147,8 @@ public class SweetErrorInActivity extends AppCompatActivity {
 		// and your child view that you want hide and layoutError UI to visible. It will handle everything.
 		 sweetUIErrorHandler.showSweetCustomErrorUI(getString(R.string.no_sweets_found), R.drawable.ic_adb_black_24dp,
 				llSweet, layoutError);	
-    }
+   	 }
+  }
 ```
 
   - Initialize the SweetUIErrorHandler in your **Fragment** and use it.
@@ -171,7 +172,7 @@ public class SweetErrorInFragment extends Fragment {
         View layoutError = rootView.findViewById(R.id.layout_error);
         LinearLayout llSweet = rootView.findViewById(R.id.ll_sweet); // It can be any child of your xml like Relativelayout, RecyclerView etc, as we defined in above xml.
          
-        justiceUIErrorHandler = new JusticeUIErrorHandler(getActivity(), rootView);
+        sweetUIErrorHandler = new SweetUIErrorHandler(getActivity(), rootView);
         
         // Now you are all set. Whatever error UI you want to show according to condition like
 		// you can use rest of things as we are using in above activity.
