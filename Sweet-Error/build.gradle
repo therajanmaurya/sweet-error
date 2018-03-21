@@ -1,9 +1,31 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'Sweet-Error'
+    bintrayName = 'Sweet-Error'
+
+    publishedGroupId = 'com.github.therajanmaurya'
+    libraryName = 'Sweet-Error'
+    artifact = 'Sweet-Error'
+
+    libraryDescription = 'A Library to handle the error UIs'
+
+    siteUrl = 'https://github.com/therajanmaurya/Sweet-Error'
+    gitUrl = 'https://github.com/therajanmaurya/Sweet-Error.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'therajanmaurya'
+    developerName = 'Rajan Maurya'
+    developerEmail = 'rajanmaurya154@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
 android {
     compileSdkVersion 26
-
-
 
     defaultConfig {
         minSdkVersion 15
@@ -34,3 +56,18 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
+
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'
+
+// Used this article to release the library
+// https://inthecheesefactory.com/blog/how-to-upload-library-to-jcenter-maven-central-as-dependency/en
+
+// Add these line in local.properties
+//bintray.user=YOUR_BINTRAY_USERNAME
+//bintray.apikey=YOUR_BINTRAY_API_KEY
+
+//bintray.gpg.password=YOUR_GPG_PASSWORD means passphrase
+//bintray.oss.user=YOUR_OSS_USERNAME
+//bintray.oss.password=YOUR_OSS_PASSWORD / https://issues.sonatype.org/browse/OSSRH-38568
