@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Sweet Error Demo</string>
+
+    <string name="error_ui">Error UI</string>
+    <string name="no_internet_ui">No Internet UI</string>
+    <string name="empty_ui">Empty UI</string>
+    <string name="custom_error_ui">Custom Error UI</string>
+</resources>
