@@ -5,9 +5,6 @@ buildscript {
     repositories {
         google()
         jcenter()
-        maven {
-            url 'https://dl.bintray.com/therajanmaurya/maven/'
-        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.1'
@@ -22,6 +19,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'https://dl.bintray.com/therajanmaurya/Sweet-Error/'
+        }
     }
 }
 
