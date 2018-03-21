@@ -1,1 +1,1 @@
-include ':app', ':sweeterror'
+include ':app', ':Sweet-Error'
