@@ -1,4 +1,6 @@
-# Sweet Error
+![Sweet Error Demo](https://raw.githubusercontent.com/therajanmaurya/Sweet-Error/master/arts/sweet_error.png)
+
+ A Simple android library to handle every type of sweet errors.
 
 ## Sweet Designs
 <table>
@@ -31,7 +33,7 @@ In order to use the library
 ```gradle
 allprojects {
 	repositories {
-		jcenter()
+		jcenter() or mavenCentral() // whatever you use
 	}
 }
 ```
