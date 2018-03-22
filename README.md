@@ -167,7 +167,7 @@ public class SweetErrorInFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_adjournment_list, container, false);
+        rootView = inflater.inflate(R.layout.fragment_sweet, container, false);
         
         View layoutError = rootView.findViewById(R.id.layout_error);
         LinearLayout llSweet = rootView.findViewById(R.id.ll_sweet); // It can be any child of your xml like Relativelayout, RecyclerView etc, as we defined in above xml.
