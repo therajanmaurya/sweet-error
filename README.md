@@ -31,7 +31,7 @@ In order to use the library
 ```gradle
 allprojects {
 	repositories {
-		maven { url 'https://dl.bintray.com/therajanmaurya/Sweet-Error/' }
+		jcenter()
 	}
 }
 ```
