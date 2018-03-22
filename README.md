@@ -187,6 +187,32 @@ public class SweetErrorInFragment extends Fragment {
 }
 ```
 
+# Button Style according to your project style
+```xml
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar"> // whatever parent style you use.
+        <!-- Customize your theme here. -->
+	<!-- Whatever theme have here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+	
+	** Add this styles to your base project style and you are all set.**
+        <item name="colorButtonNormal">@color/colorPrimary</item>
+        <item name="android:buttonStyle">@style/AppTheme.Button</item>
+        <item name="buttonStyle">@style/AppTheme.Button</item>
+    </style>
+
+    <style name="AppTheme.Button" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+    </style>
+
+</resources>
+```
+
 # Design Inspiration
 
 Self developing projects
