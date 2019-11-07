@@ -25,7 +25,7 @@
             android:tint="@color/colorSweetError"
             app:srcCompat="@drawable/ic_cloud_off_black_24dp"/>
 
-        <!--Views for Any error occurred while make REST API call-->
+        <!--Views for Any error occurred after making REST API call-->
         <LinearLayout
             android:id="@+id/ll_error"
             android:layout_height="wrap_content"

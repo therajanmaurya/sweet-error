@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
@@ -11,28 +11,28 @@
         android:orientation="vertical">
 
         <Button
-            android:id="@+id/btn_empty_ui"
+            android:id="@+id/btnEmptyUI"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="@string/empty_ui"/>
 
         <Button
-            android:id="@+id/btn_error_ui"
+            android:id="@+id/btnErrorUI"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="@string/error_ui"/>
 
         <Button
-            android:id="@+id/btn_no_internet_ui"
+            android:id="@+id/btnNoInternetUI"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:text="@string/no_internet_ui"/>
 
         <Button
-            android:id="@+id/btn_custom_error_ui"
+            android:id="@+id/btnCustomErrorUI"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
@@ -40,4 +40,4 @@
 
     </LinearLayout>
 
-</android.support.constraint.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
