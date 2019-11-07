@@ -15,7 +15,7 @@ ext {
     siteUrl = 'https://github.com/therajanmaurya/Sweet-Error'
     gitUrl = 'https://github.com/therajanmaurya/Sweet-Error.git'
 
-    libraryVersion = '1.0.0'
+    libraryVersion = '1.0.1'
 
     developerId = 'therajanmaurya'
     developerName = 'Rajan Maurya'
@@ -53,6 +53,10 @@ android {
 
     androidExtensions {
         experimental = true
+    }
+
+    tasks.withType(Javadoc).all {
+        enabled = false
     }
 }
 

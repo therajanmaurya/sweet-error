@@ -41,7 +41,7 @@ allprojects {
  
 ```gradle
 dependencies {
-	implementation 'com.github.therajanmaurya:Sweet-Error:1.0.0'
+	implementation 'com.github.therajanmaurya:Sweet-Error:1.0.1'
 }
 ```
 
@@ -51,46 +51,46 @@ dependencies {
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
-    android:id="@+id/cl_sweet"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    android:id="@+id/clSweet"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
     <LinearLayout
-        android:id="@+id/ll_sweet"
+        android:id="@+id/llSweet"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical">
 
-        .................
+        ....................................
 
     </LinearLayout>
 
     <include
         layout="@layout/layout_sweet_exception_handler"
-        android:id="@+id/layout_error"
+        android:id="@+id/layoutError"
         android:visibility="gone"/>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 ```
 
   - Initialize the SweetUIErrorHandler in your **Activity** and use it.
 
-```java
-public class SweetErrorInActivity extends AppCompatActivity {
+```kotlin
+class SweetErrorInActivity : AppCompatActivity() {
 
-    private SweetUIErrorHandler sweetUIErrorHandler;
+   private lateinit var sweetUIErrorHandler: SweetUIErrorHandler
 
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sweet_error);
+   override fun onCreate(savedInstanceState: Bundle?) {
+         super.onCreate(savedInstanceState)
+         setContentView(R.layout.activity_sweet_error)
         
-        View layoutError = findViewById(R.id.layout_error);
-        LinearLayout llSweet = findViewById(R.id.ll_sweet); // It can be any child of your xml like Relativelayout, RecyclerView etc, as we defined in above xml.
+        val layoutError = findViewById(R.id.layoutError);
+        val llSweet = findViewById(R.id.llSweet); // It can be any child of your xml like Relativelayout, RecyclerView etc, as we defined in above xml.
 
-        sweetUIErrorHandler = new SweetUIErrorHandler(this, findViewById(android.R.id.content));
+        sweetUIErrorHandler = SweetUIErrorHandler(this, findViewById(android.R.id.content))
        
         // Now you are all set. Whatever error UI you want to show according to condition like
         
@@ -155,34 +155,35 @@ public class SweetErrorInActivity extends AppCompatActivity {
 
   - Initialize the SweetUIErrorHandler in your **Fragment** and use it.
   
-```java
-public class SweetErrorInFragment extends Fragment {
+```kotlin
+class SweetErrorInFragment : Fragment {
 
-    private View rootView;
-    private SweetUIErrorHandler sweetUIErrorHandler;
+    private lateinit var rootView: View
+    private lateinit var sweetUIErrorHandler: SweetUIErrorHandler
     
-    public SweetErrorInFragment() {
-    
+    companion object {
+         fun newInstance() = SweetErrorInFragment().apply {
+             arguments = Bundle()
+         }
     }
-
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
-            @Nullable Bundle savedInstanceState) {
-        rootView = inflater.inflate(R.layout.fragment_sweet, container, false);
-        
-        View layoutError = rootView.findViewById(R.id.layout_error);
-        LinearLayout llSweet = rootView.findViewById(R.id.ll_sweet); // It can be any child of your xml like Relativelayout, RecyclerView etc, as we defined in above xml.
-         
-        sweetUIErrorHandler = new SweetUIErrorHandler(getActivity(), rootView);
-        
-        // Now you are all set. Whatever error UI you want to show according to condition like
-		// you can use rest of things as we are using in above activity.
-
-		// Use this button click to refresh UI if any error occured or any Network issue occured.
-		Button btnTryAgain = rootView.findViewById(R.id.btn_try_again);
-        
-        return rootView;
+    
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+           return inflater.inflate(R.layout.fragment_sweet, container, false)
+    }
+    
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+       val layoutError = rootView.findViewById(R.id.layout_error)
+       val llSweet = rootView.findViewById(R.id.ll_sweet) // It can be any child of your xml like Relativelayout, RecyclerView etc, as we defined in above xml.
+               
+       sweetUIErrorHandler = SweetUIErrorHandler(activity!!, view)
+              
+       // Now you are all set. Whatever error UI you want to show according to condition like
+       // you can use rest of things as we are using in above activity.
+      
+       // Use this button click to refresh UI if any error occured or any Network issue occured.
+       val btnTryAgain = view.findViewById(R.id.btnTryAgain);
+              
+       return rootView;
     }
 }
 ```
@@ -224,7 +225,7 @@ Self developing projects
 # License
 
 ```
-Copyright 2018 Rajan Maurya
+Copyright 2019 Rajan Maurya
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
