@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout
+<androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,14 +9,14 @@
 
     <LinearLayout
         android:gravity="center"
-        android:id="@+id/ll_error_to_load"
+        android:id="@+id/llErrorToLoad"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:visibility="gone">
 
         <ImageView
-            android:id="@+id/iv_error_no_connection"
+            android:id="@+id/ivErrorNoInternet"
             android:contentDescription="@string/sweet_error_image"
             android:layout_gravity="center|center_horizontal"
             android:layout_height="70dp"
@@ -27,7 +27,7 @@
 
         <!--Views for Any error occurred after making REST API call-->
         <LinearLayout
-            android:id="@+id/ll_error"
+            android:id="@+id/llError"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:visibility="gone"
@@ -43,7 +43,7 @@
                 android:typeface="monospace"/>
 
             <TextView
-                android:id="@+id/tv_error_feature_name"
+                android:id="@+id/tvErrorFeatureName"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
@@ -55,7 +55,7 @@
 
         <!--Views for No Internet connection-->
         <LinearLayout
-            android:id="@+id/ll_no_internet"
+            android:id="@+id/llNoInternet"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:orientation="vertical"
@@ -90,7 +90,7 @@
 
         <!--Button to retry again-->
         <Button
-            android:id="@+id/btn_try_again"
+            android:id="@+id/btnTryAgain"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/layout_padding_16dp"
             android:layout_width="wrap_content"
@@ -102,7 +102,7 @@
 
     <LinearLayout
         android:gravity="center"
-        android:id="@+id/ll_empty_ui"
+        android:id="@+id/llEmptyUI"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -110,7 +110,7 @@
 
         <ImageView
             android:contentDescription="@string/sweet_error_image"
-            android:id="@+id/iv_empty_feature_image"
+            android:id="@+id/ivEmptyFeatureImage"
             android:layout_gravity="center|center_horizontal"
             android:layout_height="70dp"
             android:layout_marginBottom="@dimen/layout_padding_16dp"
@@ -120,7 +120,7 @@
 
         <TextView
             style="@style/Base.TextAppearance.AppCompat.Medium"
-            android:id="@+id/tv_empty_feature_name"
+            android:id="@+id/tvFeatureName"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:textColor="@color/colorSweetError"
@@ -129,7 +129,7 @@
             tools:text="No Deposit accounts Found"/>
 
         <TextView
-            android:id="@+id/tv_empty_sub_feature_name"
+            android:id="@+id/tvSubFeatureName"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:textColor="@color/colorSweetError"
@@ -141,7 +141,7 @@
 
     <LinearLayout
         android:gravity="center"
-        android:id="@+id/ll_custom_ui"
+        android:id="@+id/llCustomUI"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:orientation="vertical"
@@ -149,7 +149,7 @@
 
         <ImageView
             android:contentDescription="@string/sweet_error_image"
-            android:id="@+id/iv_custom_feature_image"
+            android:id="@+id/ivCustomFeatureImage"
             android:layout_gravity="center|center_horizontal"
             android:layout_height="70dp"
             android:layout_marginBottom="@dimen/layout_padding_16dp"
@@ -159,23 +159,28 @@
 
         <TextView
             style="@style/Base.TextAppearance.AppCompat.Medium"
-            android:id="@+id/tv_custom_feature_name"
+            android:id="@+id/tvCustomFeatureName"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:textColor="@color/colorSweetError"
             android:textSize="@dimen/text_size_20sp"
             android:typeface="monospace"
-            tools:text="No Cases Found with 'CR/232'"/>
+            android:gravity="center"
+            android:paddingLeft="@dimen/layout_padding_30dp"
+            android:paddingRight="@dimen/layout_padding_30dp"
+            tools:text="This is custom error, It can be long. we really don't know"/>
 
         <TextView
-            android:id="@+id/tv_custom_sub_feature_name"
+            android:id="@+id/tvCustomSubFeatureName"
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
             android:textColor="@color/colorSweetError"
             android:textSize="@dimen/text_size_14sp"
             android:gravity="center"
+            android:paddingLeft="@dimen/layout_padding_30dp"
+            android:paddingRight="@dimen/layout_padding_30dp"
             tools:text="Top to add Deposit account"/>
 
     </LinearLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,6 +1,7 @@
 package com.github.therajanmaurya.sweeterror.demo
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.github.therajanmaurya.sweeterror.SweetUIErrorHandler
 import com.google.android.material.snackbar.Snackbar
@@ -47,11 +48,10 @@ class SweetErrorInActivity : AppCompatActivity() {
         fabAddSweet.setOnClickListener {
             Snackbar.make(clSweet, "Adding Sweet :)", Snackbar.LENGTH_LONG).show()
         }
-    }
 
-   /* @OnClick(R.id.btn_try_again)
-    internal fun retrySweet() {
-        Snackbar.make(findViewById(R.id.cl_sweet), "Loading Sweet ...",
-                Snackbar.LENGTH_LONG).show()
-    }*/
+        findViewById<Button>(R.id.btnTryAgain).setOnClickListener {
+            Snackbar.make(clSweet, "Loading Sweet ...",
+                    Snackbar.LENGTH_LONG).show()
+        }
+    }
 }

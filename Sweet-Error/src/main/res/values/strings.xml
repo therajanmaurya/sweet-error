@@ -20,8 +20,8 @@
     <string name="sweet">Sweet</string>
 
     <!--Custom Error Message-->
-    <string name="no_sweets_found">No Sweets found to taste</string>
-    <string name="come_later_again">please come later again …</string>
+    <string name="no_sweets_found">No Sweets found to taste, It can be very long. we really don\'t know. what type of error is coming</string>
+    <string name="come_later_again">Go deep and debug it, why does this happen in the first place, It should not be NPE, please come later again…</string>
 
     <!--Error Message-->
     <string name="error_sorry_not_able_to_load">Sorry we weren\'t able to load</string>
