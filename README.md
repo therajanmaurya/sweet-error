@@ -87,8 +87,8 @@ class SweetErrorInActivity : AppCompatActivity() {
          super.onCreate(savedInstanceState)
          setContentView(R.layout.activity_sweet_error)
         
-        val layoutError = findViewById(R.id.layoutError);
-        val llSweet = findViewById(R.id.llSweet); // It can be any child of your xml like Relativelayout, RecyclerView etc, as we defined in above xml.
+        val layoutError = findViewById(R.id.layoutError)
+        val llSweet = findViewById(R.id.llSweet) // It can be any child of your xml like RelativeLayout, RecyclerView etc, as we defined in above xml.
 
         sweetUIErrorHandler = SweetUIErrorHandler(this, findViewById(android.R.id.content))
        
@@ -100,7 +100,7 @@ class SweetErrorInActivity : AppCompatActivity() {
         // layoutError UI to visible. It will handle everything.
          sweetUIErrorHandler.showSweetEmptyUI(getString(R.string.sweets),
                         getString(R.string.sweet), R.drawable.ic_adb_black_24dp,
-                        llSweet, layoutError);
+                        llSweet, layoutError)
 			
 			
 		# Empty UI (1.2)
@@ -108,30 +108,30 @@ class SweetErrorInActivity : AppCompatActivity() {
 		// and your child view that you want hide and layoutError UI to visible. It will handle everything.
 		// See 2nd screenshot above as an example
 		 sweetUIErrorHandler.showSweetEmptyUI(getString(R.string.sweets), R.drawable.ic_adb_black_24dp,
-				llSweet, layoutError);
+				llSweet, layoutError)
 
 
 		# Error UI (1.1)
 		// Need to pass the feature name in which error occured and
 		// your child view that you want hide and layoutError UI to visible. It will handle everything.
-		sweetUIErrorHandler.showSweetErrorUI(getString(R.string.sweets), llSweet, layoutError);
+		sweetUIErrorHandler.showSweetErrorUI(getString(R.string.sweets), llSweet, layoutError)
 
 
 		# Error UI (1.2)
 		// Need to pass the feature name in which error occured and image that you want to show like 
 		// bad internet connection image etc.
 		// your child view that you want hide and layoutError UI to visible. It will handle everything.
-		sweetUIErrorHandler.showSweetErrorUI(getString(R.string.sweets), R.drawable.ic_no_network llSweet, layoutError);
+		sweetUIErrorHandler.showSweetErrorUI(getString(R.string.sweets), R.drawable.ic_no_network llSweet, layoutError)
 
 
 		// Use this button click to refresh UI if any error occured or any Network issue occured.
-		Button btnTryAgain = findViewById(R.id.btn_try_again);
+		val btnTryAgain = findViewById<Button>(R.id.btnTryAgain)
 
 
 		# No Network I UI (1.1)
 		// Need to pass your child view that you want hide and layoutError UI to visible. It will handle everything.
 		// It will look like above 4th screenshot.
-		sweetUIErrorHandler.showSweetNoInternetUI(llSweet, layoutError);
+		sweetUIErrorHandler.showSweetNoInternetUI(llSweet, layoutError)
 
 
 		# Custom Error UI (1.1)
@@ -140,7 +140,7 @@ class SweetErrorInActivity : AppCompatActivity() {
 		// and your child view that you want hide and layoutError UI to visible. It will handle everything.
 		 sweetUIErrorHandler.showSweetCustomErrorUI(getString(R.string.no_sweets_found),
 				getString(R.string.come_later_again), R.drawable.ic_adb_black_24dp,
-				llSweet, layoutError);	
+				llSweet, layoutError)
 
 
 		# Custom Error UI (1.2)
@@ -148,7 +148,7 @@ class SweetErrorInActivity : AppCompatActivity() {
 		// the title text that will show bottom to the image and there will be no subtext, only image and error text.
 		// and your child view that you want hide and layoutError UI to visible. It will handle everything.
 		 sweetUIErrorHandler.showSweetCustomErrorUI(getString(R.string.no_sweets_found), R.drawable.ic_adb_black_24dp,
-				llSweet, layoutError);	
+				llSweet, layoutError)	
    	 }
   }
 ```
@@ -181,7 +181,7 @@ class SweetErrorInFragment : Fragment {
        // you can use rest of things as we are using in above activity.
       
        // Use this button click to refresh UI if any error occured or any Network issue occured.
-       val btnTryAgain = view.findViewById(R.id.btnTryAgain);
+       val btnTryAgain = view.findViewById<Button>(R.id.btnTryAgain)
               
        return rootView;
     }
