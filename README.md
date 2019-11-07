@@ -19,7 +19,7 @@
 </table>
 
 # APK
-[Debug APK](https://github.com/therajanmaurya/Sweet-Error/releases/download/v1.0/SweetError.apk)
+[Debug APK](https://github.com/therajanmaurya/Sweet-Error/releases/download/v1.0.1/Sweet-Error.apk)
 
 Usage
 -----
