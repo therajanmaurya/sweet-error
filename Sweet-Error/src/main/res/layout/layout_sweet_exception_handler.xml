@@ -134,6 +134,7 @@
             android:layout_width="wrap_content"
             android:textColor="@color/colorSweetError"
             android:textSize="@dimen/text_size_14sp"
+            android:gravity="center"
             tools:text="Top to add Deposit account"/>
 
     </LinearLayout>
@@ -172,6 +173,7 @@
             android:layout_width="wrap_content"
             android:textColor="@color/colorSweetError"
             android:textSize="@dimen/text_size_14sp"
+            android:gravity="center"
             tools:text="Top to add Deposit account"/>
 
     </LinearLayout>
