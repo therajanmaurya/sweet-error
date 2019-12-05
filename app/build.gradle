@@ -13,9 +13,19 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
+    signingConfigs {
+        release {
+            storeFile file('../Sweet_Error.keystore')
+            storePassword 'SweetErrorDemo'
+            keyAlias = 'SweetError'
+            keyPassword 'SweetErrorDemo'
+        }
+    }
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
