@@ -1,3 +1,6 @@
+# Playstore
+<a href='https://play.google.com/store/apps/details?id=com.github.therajanmaurya.sweeterror.demo'><img alt='Get it on Google Play' 
+src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width='180'/></a>
 ![Sweet Error Demo](https://raw.githubusercontent.com/therajanmaurya/Sweet-Error/master/arts/sweet_error.png)
 
  A Simple android library to handle every type of sweet errors.
@@ -17,10 +20,6 @@
     <td><img src="https://raw.githubusercontent.com/therajanmaurya/Sweet-Error/master/arts/CustomErrorUI.png"></td>
   </tr>
 </table>
-
-# APK
-<a href='https://play.google.com/store/apps/details?id=com.github.therajanmaurya.sweeterror.demo'><img alt='Get it on Google Play' 
-src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width='180'/></a>
 
 Usage
 -----
