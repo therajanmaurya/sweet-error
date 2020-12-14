@@ -1,11 +1,14 @@
 package com.github.therajanmaurya.sweeterror
 
 import android.content.Context
+import android.graphics.PorterDuff
+import android.graphics.Typeface
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
+import androidx.annotation.ColorRes
+import androidx.annotation.DimenRes
+import androidx.coordinatorlayout.widget.CoordinatorLayout
+import androidx.core.content.ContextCompat
 
 /**
  * @author Rajan Maurya
@@ -28,6 +31,7 @@ class SweetUIErrorHandler(private val context: Context, private val view: View) 
     private lateinit var llNoInternet: LinearLayout
     private lateinit var llError: LinearLayout
     private lateinit var llCustomUI: LinearLayout
+    private lateinit var clRoot: FrameLayout
 
     private lateinit var btnTryAgain: Button
 
@@ -182,7 +186,76 @@ class SweetUIErrorHandler(private val context: Context, private val view: View) 
         sweetErrorLayoutUI.visibility = View.GONE
     }
 
+    /**
+     * Set background color of main view
+     */
+    fun setBackgroundColor(@ColorRes colorRes: Int) {
+        clRoot.setBackgroundColor(ContextCompat.getColor(context, colorRes))
+    }
+
+    /**
+     * Set Custom feature image visibility
+     */
+    fun showCustomFeatureImage(value: Boolean) {
+        ivCustomFeatureImage.visibility = if (value) View.VISIBLE else View.GONE
+    }
+
+    /**
+     * Set Custom feature image drawable tint color
+     */
+    fun setCustomFeatureImageTintColor(@ColorRes colorRes: Int) {
+        ivCustomFeatureImage.setColorFilter(ContextCompat.getColor(context, colorRes), PorterDuff.Mode.SRC_ATOP)
+    }
+
+    /**
+     * Set Custom feature text typeface
+     */
+    fun setCustomFeatureTextTypeFace(typeface: Typeface) {
+        tvCustomFeatureName.typeface = typeface
+    }
+
+    /**
+     * Set Custom feature text size
+     */
+    fun setCustomFeatureTextSize(@DimenRes textSizeRes: Int) {
+        tvCustomFeatureName.textSize = context.resources.getDimension(textSizeRes)
+    }
+
+    /**
+     * Set Custom feature text color
+     */
+    fun setCustomFeatureTextColor(@ColorRes colorRes: Int) {
+        tvCustomFeatureName.setTextColor(ContextCompat.getColor(context, colorRes))
+    }
+
+    /**
+     * Set Custom sub feature padding
+     */
+    fun setCustomSubFeatureTextPadding(left: Int, top: Int, right: Int, bottom: Int) {
+        tvCustomSubFeatureName.setPadding(left, top, right, bottom)
+    }
+
+    fun setCustomSubFeatureTextTypeFace(typeface: Typeface) {
+        tvCustomSubFeatureName.typeface = typeface
+    }
+
+    /**
+     * Set Custom Sub feature text size
+     */
+    fun setCustomSubFeatureTextSize(@DimenRes textSizeRes: Int) {
+        tvCustomSubFeatureName.textSize = context.resources.getDimension(textSizeRes)
+    }
+
+    /**
+     * Set Custom Sub feature text color
+     */
+    fun setCustomSubFeatureTextColor(@ColorRes colorRes: Int) {
+        tvCustomSubFeatureName.setTextColor(ContextCompat.getColor(context, colorRes))
+    }
+
+
     private fun initializeUIComponent() {
+        clRoot = view.findViewById(R.id.clRoot)
         ivEmptyFeatureImage = view.findViewById(R.id.ivEmptyFeatureImage)
         tvFeatureName = view.findViewById(R.id.tvFeatureName)
         tvSubFeatureName = view.findViewById(R.id.tvSubFeatureName)

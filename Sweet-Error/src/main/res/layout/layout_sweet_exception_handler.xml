@@ -1,186 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/sweet_background"
-    android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <LinearLayout
-        android:gravity="center"
-        android:id="@+id/llErrorToLoad"
-        android:layout_height="match_parent"
+    <FrameLayout
+        android:id="@+id/clRoot"
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:visibility="gone">
+        android:layout_height="match_parent"
+        android:background="@color/sweet_background">
 
-        <ImageView
-            android:id="@+id/ivErrorNoInternet"
-            android:contentDescription="@string/sweet_error_image"
-            android:layout_gravity="center|center_horizontal"
-            android:layout_height="70dp"
-            android:layout_marginBottom="@dimen/layout_padding_16dp"
-            android:layout_width="70dp"
-            android:tint="@color/colorSweetError"
-            app:srcCompat="@drawable/ic_cloud_off_black_24dp"/>
-
-        <!--Views for Any error occurred after making REST API call-->
-        <LinearLayout
-            android:id="@+id/llError"
-            android:layout_height="wrap_content"
+        <TextView
+            android:id="@+id/tv"
             android:layout_width="wrap_content"
-            android:visibility="gone"
-            android:orientation="vertical">
-
-            <TextView
-                style="@style/Base.TextAppearance.AppCompat.Medium"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="@string/error_sorry_not_able_to_load"
-                android:textColor="@color/colorSweetError"
-                android:textSize="@dimen/text_size_14sp"
-                android:typeface="monospace"/>
-
-            <TextView
-                android:id="@+id/tvErrorFeatureName"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:textColor="@color/colorSweetError"
-                android:textSize="@dimen/text_size_14sp"
-                tools:text="Sweet Things"/>
-
-        </LinearLayout>
-
-        <!--Views for No Internet connection-->
-        <LinearLayout
-            android:id="@+id/llNoInternet"
             android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+            android:text="Hello" />
+
+        <LinearLayout
+            android:id="@+id/llErrorToLoad"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical"
             android:visibility="gone">
 
-            <TextView
-                style="@style/Base.TextAppearance.AppCompat.Large"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="@string/oh_no"
-                android:textColor="@color/colorSweetError"
-                android:typeface="monospace"/>
+            <ImageView
+                android:id="@+id/ivErrorNoInternet"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginBottom="@dimen/layout_padding_16dp"
+                android:contentDescription="@string/sweet_error_image"
+                android:tint="@color/colorSweetError"
+                app:srcCompat="@drawable/ic_cloud_off_black_24dp" />
 
-            <TextView
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"
+            <!--Views for Any error occurred after making REST API call-->
+            <LinearLayout
+                android:id="@+id/llError"
                 android:layout_width="wrap_content"
-                android:text="@string/no_internet_connection"
-                android:textColor="@color/colorSweetError"
-                android:textSize="@dimen/text_size_14sp"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
 
-            <TextView
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"
+                <TextView
+                    style="@style/Base.TextAppearance.AppCompat.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/error_sorry_not_able_to_load"
+                    android:textColor="@color/colorSweetError"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:id="@+id/tvErrorFeatureName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/colorSweetError"
+                    android:textSize="@dimen/text_size_14sp"
+                    tools:text="Sweet Things" />
+
+            </LinearLayout>
+
+            <!--Views for No Internet connection-->
+            <LinearLayout
+                android:id="@+id/llNoInternet"
                 android:layout_width="wrap_content"
-                android:text="@string/or_try_again"
-                android:textColor="@color/colorSweetError"
-                android:textSize="@dimen/text_size_14sp"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/Base.TextAppearance.AppCompat.Large"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/oh_no"
+                    android:textColor="@color/colorSweetError"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/no_internet_connection"
+                    android:textColor="@color/colorSweetError"
+                    android:textSize="@dimen/text_size_14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/or_try_again"
+                    android:textColor="@color/colorSweetError"
+                    android:textSize="@dimen/text_size_14sp" />
+
+            </LinearLayout>
+
+            <!--Button to retry again-->
+            <Button
+                android:id="@+id/btnTryAgain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/layout_padding_16dp"
+                android:paddingLeft="@dimen/layout_padding_24dp"
+                android:paddingRight="@dimen/layout_padding_24dp"
+                android:text="@string/try_again" />
 
         </LinearLayout>
 
-        <!--Button to retry again-->
-        <Button
-            android:id="@+id/btnTryAgain"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/layout_padding_16dp"
-            android:layout_width="wrap_content"
-            android:paddingLeft="@dimen/layout_padding_24dp"
-            android:paddingRight="@dimen/layout_padding_24dp"
-            android:text="@string/try_again"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:gravity="center"
-        android:id="@+id/llEmptyUI"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <ImageView
-            android:contentDescription="@string/sweet_error_image"
-            android:id="@+id/ivEmptyFeatureImage"
-            android:layout_gravity="center|center_horizontal"
-            android:layout_height="70dp"
-            android:layout_marginBottom="@dimen/layout_padding_16dp"
-            android:layout_width="70dp"
-            android:tint="@color/colorSweetError"
-            app:srcCompat="@drawable/ic_adb_black_24dp"/>
-
-        <TextView
-            style="@style/Base.TextAppearance.AppCompat.Medium"
-            android:id="@+id/tvFeatureName"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textColor="@color/colorSweetError"
-            android:textSize="@dimen/text_size_20sp"
-            android:typeface="monospace"
-            tools:text="No Deposit accounts Found"/>
-
-        <TextView
-            android:id="@+id/tvSubFeatureName"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textColor="@color/colorSweetError"
-            android:textSize="@dimen/text_size_14sp"
+        <LinearLayout
+            android:id="@+id/llEmptyUI"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center"
-            tools:text="Top to add Deposit account"/>
+            android:orientation="vertical"
+            android:visibility="gone">
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/ivEmptyFeatureImage"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginBottom="@dimen/layout_padding_16dp"
+                android:contentDescription="@string/sweet_error_image"
+                android:tint="@color/colorSweetError"
+                app:srcCompat="@drawable/ic_adb_black_24dp" />
 
-    <LinearLayout
-        android:gravity="center"
-        android:id="@+id/llCustomUI"
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:visibility="gone">
+            <TextView
+                android:id="@+id/tvFeatureName"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorSweetError"
+                android:textSize="@dimen/text_size_20sp"
+                android:typeface="monospace"
+                tools:text="No Deposit accounts Found" />
 
-        <ImageView
-            android:contentDescription="@string/sweet_error_image"
-            android:id="@+id/ivCustomFeatureImage"
-            android:layout_gravity="center|center_horizontal"
-            android:layout_height="70dp"
-            android:layout_marginBottom="@dimen/layout_padding_16dp"
-            android:layout_width="70dp"
-            android:tint="@color/colorSweetError"
-            app:srcCompat="@drawable/ic_adb_black_24dp"/>
+            <TextView
+                android:id="@+id/tvSubFeatureName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/colorSweetError"
+                android:textSize="@dimen/text_size_14sp"
+                tools:text="Top to add Deposit account" />
 
-        <TextView
-            style="@style/Base.TextAppearance.AppCompat.Medium"
-            android:id="@+id/tvCustomFeatureName"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textColor="@color/colorSweetError"
-            android:textSize="@dimen/text_size_20sp"
-            android:typeface="monospace"
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llCustomUI"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:gravity="center"
-            android:paddingLeft="@dimen/layout_padding_30dp"
-            android:paddingRight="@dimen/layout_padding_30dp"
-            tools:text="This is custom error, It can be long. we really don't know"/>
+            android:orientation="vertical"
+            android:visibility="gone">
 
-        <TextView
-            android:id="@+id/tvCustomSubFeatureName"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:textColor="@color/colorSweetError"
-            android:textSize="@dimen/text_size_14sp"
-            android:gravity="center"
-            android:paddingLeft="@dimen/layout_padding_30dp"
-            android:paddingRight="@dimen/layout_padding_30dp"
-            tools:text="Top to add Deposit account"/>
+            <ImageView
+                android:id="@+id/ivCustomFeatureImage"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginBottom="@dimen/layout_padding_16dp"
+                android:contentDescription="@string/sweet_error_image"
+                android:tint="@color/colorSweetError"
+                app:srcCompat="@drawable/ic_adb_black_24dp" />
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tvCustomFeatureName"
+                style="@style/Base.TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="@dimen/layout_padding_30dp"
+                android:paddingRight="@dimen/layout_padding_30dp"
+                android:textColor="@color/colorSweetError"
+                android:textSize="@dimen/text_size_20sp"
+                android:typeface="monospace"
+                tools:text="This is custom error, It can be long. we really don't know" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            <TextView
+                android:id="@+id/tvCustomSubFeatureName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="@dimen/layout_padding_30dp"
+                android:paddingRight="@dimen/layout_padding_30dp"
+                android:textColor="@color/colorSweetError"
+                android:textSize="@dimen/text_size_14sp"
+                tools:text="Top to add Deposit account" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+</FrameLayout>
