@@ -3,6 +3,7 @@ package com.github.therajanmaurya.sweeterror.demo
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
 import com.github.therajanmaurya.sweeterror.SweetUIErrorHandler
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_sweet_error.*
@@ -43,7 +44,20 @@ class SweetErrorInActivity : AppCompatActivity() {
                         getString(R.string.come_later_again), R.drawable.ic_adb_black_24dp,
                         llSweet, layoutError)
             }
+            SweetErrorType.CUSTOM_STYLE -> {
+
+                sweetUIErrorHandler.setBackgroundColor(R.color.grey_background)
+                sweetUIErrorHandler.showCustomFeatureImage(false)
+                sweetUIErrorHandler.setCustomFeatureImageTintColor(R.color.colorAccent)
+                sweetUIErrorHandler.setCustomFeatureTextTypeFace(ResourcesCompat.getFont(this, R.font.nunito)!!)
+                sweetUIErrorHandler.setCustomSubFeatureTextTypeFace(ResourcesCompat.getFont(this, R.font.nunito)!!)
+
+                sweetUIErrorHandler.showSweetCustomErrorUI(getString(R.string.no_sweets_found),
+                        getString(R.string.come_later_again), R.drawable.ic_adb_black_24dp,
+                        llSweet, layoutError)
+            }
         }
+
 
         fabAddSweet.setOnClickListener {
             Snackbar.make(clSweet, "Adding Sweet :)", Snackbar.LENGTH_LONG).show()

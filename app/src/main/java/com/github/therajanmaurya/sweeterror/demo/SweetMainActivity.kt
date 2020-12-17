@@ -16,6 +16,7 @@ class SweetMainActivity : AppCompatActivity() {
         btnErrorUI.setOnClickListener { sweetIntent(SweetErrorType.ERROR_UI) }
         btnNoInternetUI.setOnClickListener { sweetIntent(SweetErrorType.NO_INTERNET) }
         btnCustomErrorUI.setOnClickListener { sweetIntent(SweetErrorType.CUSTOM) }
+        btnCustomStyleErrorUI.setOnClickListener { sweetIntent(SweetErrorType.CUSTOM_STYLE) }
     }
 
     private fun sweetIntent(sweetErrorType: SweetErrorType) {
