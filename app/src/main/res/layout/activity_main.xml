@@ -38,6 +38,13 @@
             android:layout_width="wrap_content"
             android:text="@string/custom_error_ui"/>
 
+        <Button
+            android:id="@+id/btnCustomStyleErrorUI"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="@string/custom_style_error_ui"/>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
