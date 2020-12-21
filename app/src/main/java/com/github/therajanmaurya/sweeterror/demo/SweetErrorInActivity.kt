@@ -46,7 +46,7 @@ class SweetErrorInActivity : AppCompatActivity() {
             }
             SweetErrorType.CUSTOM_STYLE -> {
 
-                sweetUIErrorHandler.setBackgroundColor(R.color.grey_background)
+                sweetUIErrorHandler.setBackgroundColor(R.color.light_blue)
                 sweetUIErrorHandler.showCustomFeatureImage(false)
                 sweetUIErrorHandler.setCustomFeatureImageTintColor(R.color.colorAccent)
                 sweetUIErrorHandler.setCustomFeatureTextTypeFace(ResourcesCompat.getFont(this, R.font.nunito)!!)
