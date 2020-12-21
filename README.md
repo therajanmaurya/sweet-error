@@ -1,4 +1,5 @@
 ### Google Play Store
+[![](https://jitpack.io/v/therajanmaurya/sweet-error.svg)](https://jitpack.io/#therajanmaurya/sweet-error)
 <a href='https://play.google.com/store/apps/details?id=com.github.therajanmaurya.sweeterror.demo'><img alt='Get it on Google Play' 
 src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png' width='180'/></a>
 
@@ -34,7 +35,7 @@ In order to use the library
 ```gradle
 allprojects {
 	repositories {
-		jcenter() or mavenCentral() // whatever you use
+		jcenter() or mavenCentral() or maven { url 'https://jitpack.io' } // whatever you use
 	}
 }
 ```
@@ -42,7 +43,8 @@ allprojects {
  
 ```gradle
 dependencies {
-	implementation 'com.github.therajanmaurya:Sweet-Error:1.0.1'
+    // NOTE: please use latest released version on jitpack
+	implementation 'com.github.therajanmaurya:sweet-error:1.0.3'
 }
 ```
 
