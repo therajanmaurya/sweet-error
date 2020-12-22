@@ -3,6 +3,8 @@ package com.github.therajanmaurya.sweeterror
 import android.content.Context
 import android.graphics.PorterDuff
 import android.graphics.Typeface
+import android.util.TypedValue
+import android.util.TypedValue.COMPLEX_UNIT_PX
 import android.view.View
 import android.widget.*
 import androidx.annotation.ColorRes
@@ -218,7 +220,7 @@ class SweetUIErrorHandler(private val context: Context, private val view: View) 
      * Set Custom feature text size
      */
     fun setCustomFeatureTextSize(@DimenRes textSizeRes: Int) {
-        tvCustomFeatureName.textSize = context.resources.getDimension(textSizeRes)
+        tvCustomFeatureName.setTextSize(COMPLEX_UNIT_PX, context.resources.getDimension(textSizeRes))
     }
 
     /**
@@ -243,7 +245,7 @@ class SweetUIErrorHandler(private val context: Context, private val view: View) 
      * Set Custom Sub feature text size
      */
     fun setCustomSubFeatureTextSize(@DimenRes textSizeRes: Int) {
-        tvCustomSubFeatureName.textSize = context.resources.getDimension(textSizeRes)
+        tvCustomSubFeatureName.setTextSize(COMPLEX_UNIT_PX, context.resources.getDimension(textSizeRes))
     }
 
     /**
