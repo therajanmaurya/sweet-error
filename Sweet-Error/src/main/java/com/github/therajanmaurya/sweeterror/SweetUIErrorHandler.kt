@@ -146,7 +146,7 @@ class SweetUIErrorHandler(private val context: Context, private val view: View) 
      * @param subFeatureName Sub Feature Name
      * @param featureImage   Feature Image
      */
-    fun showSweetCustomErrorUI(featureName: String, subFeatureName: String,
+    fun showSweetCustomErrorUI(featureName: String?, subFeatureName: String?,
                                featureImage: Int?, featureLayoutUI: View, sweetErrorLayoutUI: View) {
         featureLayoutUI.visibility = View.GONE
         sweetErrorLayoutUI.visibility = View.VISIBLE
@@ -154,8 +154,8 @@ class SweetUIErrorHandler(private val context: Context, private val view: View) 
         llEmptyUI.visibility = View.GONE
         llCustomUI.visibility = View.VISIBLE
         ivCustomFeatureImage.setImageResource(featureImage!!)
-        tvCustomFeatureName.text = featureName
-        tvCustomSubFeatureName.text = subFeatureName
+        featureName?.let { tvCustomFeatureName.text = it } ?: run { tvCustomFeatureName.visibility = View.GONE }
+        subFeatureName?.let { tvCustomSubFeatureName.text = it } ?: run { tvCustomSubFeatureName.visibility = View.GONE }
     }
 
     /**
