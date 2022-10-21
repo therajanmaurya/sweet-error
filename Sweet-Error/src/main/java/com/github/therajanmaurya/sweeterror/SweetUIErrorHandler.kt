@@ -153,7 +153,7 @@ class SweetUIErrorHandler(private val context: Context, private val view: View) 
         llErrorToLoad.visibility = View.GONE
         llEmptyUI.visibility = View.GONE
         llCustomUI.visibility = View.VISIBLE
-        ivCustomFeatureImage.setImageResource(featureImage!!)
+        featureImage?.let { ivCustomFeatureImage.setImageResource(it) } ?: run { ivCustomFeatureImage.visibility = View.GONE }
         featureName?.let { tvCustomFeatureName.text = it } ?: run { tvCustomFeatureName.visibility = View.GONE }
         subFeatureName?.let { tvCustomSubFeatureName.text = it } ?: run { tvCustomSubFeatureName.visibility = View.GONE }
     }
@@ -172,7 +172,7 @@ class SweetUIErrorHandler(private val context: Context, private val view: View) 
         llErrorToLoad.visibility = View.GONE
         llEmptyUI.visibility = View.GONE
         llCustomUI.visibility = View.VISIBLE
-        ivCustomFeatureImage.setImageResource(featureImage!!)
+        featureImage?.let { ivCustomFeatureImage.setImageResource(it) } ?: run { ivCustomFeatureImage.visibility = View.GONE }
         tvCustomFeatureName.text = featureName
         tvCustomSubFeatureName.visibility = View.GONE
     }
