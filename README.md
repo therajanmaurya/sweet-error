@@ -44,7 +44,7 @@ allprojects {
 ```gradle
 dependencies {
     // NOTE: please use latest released version on jitpack
-	implementation 'com.github.therajanmaurya:sweet-error:1.0.3'
+	implementation 'com.github.therajanmaurya:sweet-error:1.0.9'
 }
 ```
 
